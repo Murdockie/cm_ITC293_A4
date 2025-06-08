@@ -1,0 +1,136 @@
+<!DOCTYPE HTML5>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chris Murdock">
+    <meta name="description" content="Sign up for the Solar Solutions Corp. newsletter to receive updates on residential & commercial solar, battery storage, maintenance and energy audits.">
+    <title>Solar Solutions Corp. | Newsletter Signup</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <script>
+      // Display welcome mess
+      function welcome() {
+        alert("Welcome to Solar Solutions Corp! - Newsletter Signup");
+      }
+      
+      // Validate that first and last names
+      function validateForm(event) {
+        var first = document.getElementById('firstName').value.trim();
+        var last = document.getElementById('lastName').value.trim();
+        if (!first || !last) {
+          alert('Please fill in both First Name and Last Name!.');
+          event.preventDefault();
+          return false;
+        }
+        return true;
+      }
+    </script>
+
+    
+  </head>
+
+  <body onload="welcome()">
+    
+    <header>
+      <!-- Header with logo and motto -->
+      <!-- Navigation (consistent across pages) -->
+      <nav>
+        <ul>
+          <li><h2>Chris Murdock</h2></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cm_A4_resume.html">Resume</a></li>
+          <li><a href="cm_A4_communication_skills.html">Communication Skills</a></li>
+          <li><a href="cm_A4_web_skills.html">Web Skills</a></li>
+          <li><a href="cm_A4_solar_skills.html">Solar Skills</a></li>
+          <li><a href="cm_A4_electrical_skills.html">Electrical Skills</a></li>
+          <li><a href="cm_A4_newsletter.html">Newsletter Signup</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <div class="site-wrapper">
+
+      <div class="form-container">
+
+
+        <h2>Solar Solutions Corp. Newsletter Signup</h2>
+
+        <p><em>Please complete the required fields below to join our mailing list.</em></p>
+
+        <!-- Newsletter form posts to echo_form -->
+        <form action="http://csusap.csu.edu.au/cgi-bin/echo_form" method="post" onsubmit="validateForm(event)">
+          <!-- First N -->
+          <label for="firstName">First Name: <span>*</span></label>
+          <input type="text" id="firstName" name="firstName" maxlength="60" placeholder="Required data">
+
+          <!-- Last N -->
+          <label for="lastName">Last Name: <span>*</span></label>
+          <input type="text" id="lastName" name="lastName" maxlength="60" placeholder="Required data">
+
+          <!-- Email Addy -->
+          <label for="email">Email Address: <span>*</span></label>
+          <input type="email" id="email" name="email" maxlength="60" placeholder="Required data" required>
+
+          <!-- Ages -->
+          <fieldset>
+            <legend>Age Range (select one):</legend>
+            <label><input type="radio" name="age" value="15-25" required> 15-25</label>
+            <label><input type="radio" name="age" value="26-35"> 26-35</label>
+            <label><input type="radio" name="age" value="36-45"> 36-45</label>
+            <label><input type="radio" name="age" value="46-55"> 46-55</label>
+            <label><input type="radio" name="age" value="55+"> 55+</label>
+          </fieldset>
+
+          <!-- Services Offered -->
+          <fieldset>
+            <legend>Services of interest (select any):</legend>
+            <label><input type="checkbox" name="service" value="Residential Solar"> Residential Solar</label>
+            <label><input type="checkbox" name="service" value="Commercial Solar"> Commercial Solar</label>
+            <label><input type="checkbox" name="service" value="Battery Storage"> Battery Storage</label>
+            <label><input type="checkbox" name="service" value="Maintenance"> Maintenance</label>
+            <label><input type="checkbox" name="service" value="Energy Audits"> Energy Audits</label>
+          </fieldset>
+
+          <!-- Additional Comms -->
+          <label for="comments">Additional Comments:</label>
+          <textarea id="comments" name="comments" cols="60" rows="3" placeholder="Your message here..."></textarea>
+
+          <!-- Form Buttonz -->
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset" class="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>Connect with me on social media</p>
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.facebook.com/chris.murdock.5659" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/chrisraymurdoch/?hl=en" target="_blank">Instagram</a> |
+            <a href="https://au.linkedin.com/in/chris-murdock-5856b2103" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+
+        <p>Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cm_A4_resume.html">Resume</a></li>
+          <li><a href="cm_A4_communication_skills.html">Communication Skills</a></li>
+          <li><a href="cm_A4_web_skills.html">Web Skills</a></li>
+          <li><a href="cm_A4_solar_skills.html">Solar Skills</a></li>
+          <li><a href="cm_A4_electrical_skills.html">Electrical Skills</a></li>
+          <li><a href="cm_A4_newsletter.html">Newsletter Signup</a></li>
+        </ul>
+
+        <p>&copy; 2025 Chris Murdock | ABN: 123 456 789 | <a href="mailto:themurdocks@protonmail.com">Contact for permissions</a></p>
+        <p class="to-top"><a href="#top">Back to Top</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

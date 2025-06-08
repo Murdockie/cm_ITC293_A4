@@ -1,0 +1,433 @@
+/*----------------------------------------------------------------------------
+  1. Custom Font
+----------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'BrettleySignature';
+  src: url('../fonts/BrettleySignatureRegular-RpEMo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*----------------------------------------------------------------------------
+  2. Reset & Global Styles
+----------------------------------------------------------------------------*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f4f4f4;
+  overflow-x: hidden;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*----------------------------------------------------------------------------
+  3. Layout Containers
+----------------------------------------------------------------------------*/
+.site-wrapper {
+  width: 1024px;
+  height: 768px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content-wrapper {
+  padding: 3rem;
+  text-align: center;
+}
+
+.column-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.column {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+/*----------------------------------------------------------------------------
+  4. Header & Navigation
+----------------------------------------------------------------------------*/
+header,
+nav {
+  width: 1024px;
+  margin: 0 auto;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header {
+  padding: 0.15rem;
+  text-align: center;
+}
+
+nav {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.4rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 1%;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+}
+
+nav ul li:first-child h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: 'BrettleySignature', sans-serif;
+  color: #000;
+}
+
+nav ul li + li {
+  margin-left: 0.05rem;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #b6b6b5;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #000;
+  margin-left: 0.5rem;
+}
+
+/*----------------------------------------------------------------------------
+  5. Section Sacing & Images
+----------------------------------------------------------------------------*/
+.section_main_1,
+.section_main_2,
+.selection {
+  padding: 1.5rem 1rem;
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  text-align: right;
+}
+
+.section_main_2 {
+  text-align: left;
+}
+
+.section_images img {
+  width: 45%;
+  margin: 1rem auto;
+  display: inline-block;
+  padding: 1.5rem 1rem;
+}
+
+.index_profile_photo {
+  padding: 1.5rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.index_profile_photo img {
+  width: 65%;
+  max-width: 1024px;
+  max-height: 748px;
+  margin: 0 auto;
+}
+
+/*----------------------------------------------------------------------------
+  6. Grid
+----------------------------------------------------------------------------*/
+.skills-grid,
+.solar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.comm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/*----------------------------------------------------------------------------
+  7. Card Components
+----------------------------------------------------------------------------*/
+.skill-card,
+.comm-card,
+.solar-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.intro-card,
+.comm-card.intro,
+.solar-intro {
+  grid-column: 1 / -1;
+}
+
+.solar-intro {
+  background: #fefcf3;
+  border-left: 6px solid #f39c12;
+}
+
+.skill-card.intro-card,
+.comm-card.intro {
+  border-left: 6px solid #00aaff;
+}
+
+.solar-card {
+  border-left: 4px solid #f39c12;
+  text-align: center;
+}
+
+.comm-card {
+  border-left: 4px solid #3498db;
+  text-align: center;
+}
+
+.skill-card h3,
+.comm-card h3,
+.solar-card h3 {
+  margin: 0 0 0.75rem;
+}
+
+.solar-card h3 {
+  color: #d35400;
+}
+
+.skill-card h3,
+.comm-card h3 {
+  color: #2980b9;
+}
+
+.founder-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1rem auto;
+}
+
+.skill-card img,
+.comm-card img,
+.solar-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 1rem auto;
+}
+
+/*----------------------------------------------------------------------------
+  8. Timelinez Layout for Electrical Skillz
+----------------------------------------------------------------------------*/
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ccc;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 4px solid #007acc;
+  border-radius: 50%;
+}
+.timeline-item:nth-child(odd)::before {
+  right: -12px;
+}
+.timeline-item:nth-child(even)::before {
+  left: -12px;
+}
+
+/*----------------------------------------------------------------------------
+  9. Sections
+----------------------------------------------------------------------------*/
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222;
+}
+h3 {
+  text-align: center;
+  margin-top: 1rem;
+}
+.section {
+  margin: 2rem 0;
+}
+.education-section {
+  margin-bottom: 2rem;
+}
+
+/*----------------------------------------------------------------------------
+ 10. Table Styles
+----------------------------------------------------------------------------*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th,
+td {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+thead {
+  background: #222;
+  color: #fff;
+}
+
+/*----------------------------------------------------------------------------
+ 11. Footer
+----------------------------------------------------------------------------*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #09a3fc;
+  color: #fff;
+  font-size: 0.9rem;
+}
+footer p {
+  margin: 0.75rem 0;
+}
+.footer-social,
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+footer .to-top a {
+  color: #000;
+  text-decoration: none;
+}
+footer .to-top a:hover {
+  text-decoration: underline;
+}
+
+/*----------------------------------------------------------------------------
+ 12. Form Container Styles
+----------------------------------------------------------------------------*/
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.form-container label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+}
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form-container fieldset {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+.form-container legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+.form-container .buttons {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.form-container button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background: #007acc;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.form-container button.reset {
+  background: #bbb;
+}
+
+/*============================================================================
+  End of style.css
+============================================================================*/
